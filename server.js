@@ -1,27 +1,59 @@
+const hardcode = require('./hardcoded');
 const net = require('net');
 
-arr = [];
+
 const server = net.createServer(function (socket) {
   socket.setEncoding('utf8');
-  arr.push(socket);
+
 
 
   socket.on('data', function (data) {
-    console.log(data);
+
+    console.log(data.toString());
+    stringMaker(data);
   });
-
-
 });
 
-server.once('close', function () {
-  console.log('Connection closed');
+function stringMaker(data) {
+  string = data.toString().match(/[^\r\n]+/g)[0].split(' ');
 
-});
-server.on('error', function (err) {
-  throw err;
+  switch (string) {
+    case '404.html':
+
+      break;
+
+    default:
+      break;
+
+    case 'helium.html':
+
+      break;
+
+    default:
+      break;
+    case 'hydrogen.html':
+
+      break;
+
+    default:
+      break;
+    case 'index.html':
+
+      break;
+
+    default:
+      break;
+    case 'style.html':
+
+      break;
+
+    default:
+      break;
+
+  }
+  };
 
 
-});
-server.listen(8080, function () {
-  console.log('Server listening to 8080 port')
-});
+  server.listen(8080, function () {
+    console.log('Server listening to 8080 port')
+  });
