@@ -180,9 +180,9 @@ a:hover{
 }`;
 
 module.exports = {
-error404: error404,
-helium: helium,
-hydrogen: hydrogen,
-index: index, 
-style: style
+  error404,
+  helium,
+  hydrogen,
+  index,
+  style
 };
